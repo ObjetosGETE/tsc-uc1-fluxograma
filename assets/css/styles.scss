@@ -1,0 +1,309 @@
+* {
+    box-sizing: border-box;
+}
+
+.fluxograma-logo {
+    width: 400px;
+    max-width: 100%;
+    margin-top: 50px;
+}
+
+.tutorial-msg {
+    background-color: #F7F3F0;
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    padding: 16px;
+    border: 1px solid #624C3C;
+    color: #624C3C;
+    margin: 15px;
+}
+
+.fluxograma-container {
+    border: 2px solid #624C3C;
+    display: flex;
+    width: 98%;
+    height: 650px;
+    aspect-ratio: 16/9;
+    margin: 15px auto;
+    overflow: scroll;
+
+    position: relative;
+    background-image: url('../img/caminho.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: local;
+    background-size: 92% 100%;
+}
+
+.fluxograma-col {
+    height: 100%;
+    width: 180px;
+    flex-shrink: 0;
+    position: relative;
+
+    &.solicitante {
+        padding-top: 50px;
+    }
+
+    &.secretaria {
+        padding-top: 210px;
+    }
+
+    &.financeiro {
+        padding-top: 365px;
+    }
+
+    &.contabil {
+        padding-top: 530px;
+    }
+}
+
+.img-fluxo {
+    display: none;
+
+    &.visible {
+        display: block;
+    }
+}
+
+.fluxograma-option-selector {
+    width: 65px;
+    height: 65px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    margin: auto;
+    display: block;
+
+    &.correto {
+        display: none;
+    }
+
+    &.up {
+        background-image: url('../img/box_add_setab.svg');
+
+        &:hover {
+            background-image: url('../img/box_add_setab_hv.svg');
+        }
+    }
+
+    &.down {
+        background-image: url('../img/box_add_setac.svg');
+
+        &:hover {
+            background-image: url('../img/box_add_setac_hv.svg');
+        }
+    }
+
+    &.right {
+        background-image: url('../img/box_add_setae.svg');
+
+        &:hover {
+            background-image: url('../img/box_add_setae_hv.svg');
+        }
+    }
+}
+
+#modalOpcoes {
+    .modal-body {
+        min-height: 450px;
+
+        .lista-acoes {
+            height: 300px;
+            overflow: auto;
+            background-color: #ECE7E4;
+            padding: 8px;
+            border: 1px solid #635a54;
+
+            .opcao-fluxograma {
+                display: block;
+                width: 98%;
+                margin: 3px auto;
+                background-color: white;
+                box-sizing: border-box;
+                border: 1px solid #207893;
+                color: #207893;
+
+
+                &:hover {
+                    transform: scale(1.02);
+                    box-shadow: 3px 3px 3px #333;
+                }
+            }
+        }
+
+        .opcao-fluxograma.selected {
+            transform: scale(1.02);
+            box-shadow: 3px 3px 3px #333;
+        }
+    }
+
+    .tela-modal-opcoes-2 {
+        .lista-simbolos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 5px auto;
+            padding: 8px;
+            width: 340px;
+            background-color: #ECE7E4;
+            border: 1px solid #635a54;
+        }
+
+        .opcao-fluxograma {
+            width: 158px;
+            margin: 1px;
+            line-height: 1rem;
+            border: 2px solid #3A8399;
+            background-color: white;
+
+            &:hover {
+                transform: scale(1.02);
+                box-shadow: 3px 3px 3px #333;
+            }
+        }
+    }
+
+}
+
+.modal-btn-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn-proximo,
+.btn-voltar,
+.btn-continuar,
+.btn-concluir,
+.btn-repetir {
+    margin: 15px 0;
+    display: block;
+    color: transparent !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 50px;
+    width: 160px;
+}
+
+.btn-proximo {
+    background-image: url('../img/bt_proximo.svg');
+
+    &:hover {
+        background-image: url('../img/bt_proximo_hv.svg');
+    }
+
+    &.disabled {
+        background-image: url('../img/bt_proximo_hv.svg');
+    }
+}
+
+.btn-voltar {
+    background-image: url('../img/bt_voltar.svg');
+
+    &:hover {
+        background-image: url('../img/bt_voltar_hv.svg');
+    }
+
+    &.disabled {
+        background-image: url('../img/bt_voltar_hv.svg');
+    }
+}
+
+.btn-continuar {
+    background-image: url('../img/bt_continuar.svg');
+
+    &:hover {
+        background-image: url('../img/bt_continuar_hv.svg');
+    }
+
+    &.disabled {
+        background-image: url('../img/bt_continuar_hv.svg');
+    }
+}
+
+.btn-concluir {
+    background-image: url('../img/bt_concluir.svg');
+
+    &:hover {
+        background-image: url('../img/bt_concluir_hv.svg');
+    }
+
+    &.disabled {
+        background-image: url('../img/bt_concluir_hv.svg');
+    }
+}
+
+.btn-repetir {
+    background-image: url('../img/bt_repetir.svg');
+
+    &:hover {
+        background-image: url('../img/bt_repetir_hv.svg');
+    }
+
+    &.disabled {
+        background-image: url('../img/bt_repetir_hv.svg');
+    }
+}
+
+.absolute-position {
+    position: relative;
+    transform: translateZ(0);
+
+    img.div-pontilhado {
+        position: absolute;
+        height: 2px;
+        width: 2100px;
+        top: 0px;
+
+        &.pontilhado-2 {
+            top: 25%;
+        }
+
+        &.pontilhado-3 {
+            top: 50%;
+        }
+
+        &.pontilhado-4 {
+            top: 75%;
+        }
+    }
+
+    .tag-img {
+        height: 30px;
+        position: fixed;
+        z-index: 2;
+
+        &:nth-of-type(1) {
+            top: 0;
+        }
+
+        &:nth-of-type(2) {
+            top: 25%;
+        }
+
+        &:nth-of-type(3) {
+            top: 50%;
+        }
+
+        &:nth-of-type(4) {
+            top: 75%;
+        }
+    }
+}
+
+#modalOpcoes .modal-header,
+#modalFeedbackPositivo .modal-header,
+#modalFeedbackNegativo .modal-header {
+    border-bottom: none;
+}
+
+@media (max-width: 600px) {
+    .tutorial-msg {
+        margin: 15px auto;
+    }
+}
