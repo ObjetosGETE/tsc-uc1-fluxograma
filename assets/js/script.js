@@ -181,10 +181,43 @@ onload = function () {
         }, 500);
     });
 }
+
 modalOpcoes.addEventListener('hide.bs.modal', function () {
     $('.tela-modal-opcoes-2').fadeOut();
     setTimeout(() => {
         $('.tela-modal-opcoes-1').fadeIn();
     }, 500);
     $('.selected').removeClass('selected');
+});
+
+var modalFeedbackFinal = new bootstrap.Modal(document.getElementById('modalFeedbackFinal'));
+
+modalFeedbackPositivo.addEventListener('hide.bs.modal', function () {
+    if ($('.fluxograma-option-selector').length == $('.correto').length) {
+        modalFeedbackFinal.show();
+    }
+});
+
+const scrollableDiv = document.querySelector('.fluxograma-container');
+let isDragging = false;
+let initialX;
+
+scrollableDiv.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    isDragging = true;
+    scrollableDiv.classList.add('grabbing');
+    initialX = e.clientX - scrollableDiv.scrollLeft;
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const currentX = e.clientX;
+    const diffX = initialX - currentX;
+    scrollableDiv.scrollLeft = diffX;
+});
+
+document.addEventListener('mouseup', (e) => {
+    scrollableDiv.classList.remove('grabbing');
+    isDragging = false;
 });
