@@ -32,9 +32,9 @@ onload = function () {
     $('.btn-concluir').click(function () {
 
         let nResposta = clickedButton[0].dataset.resposta;
-        console.log('selectedOption1: ' + selectedOption1)
-        console.log('selectedOption2: ' + selectedOption2)
-        console.log('nResposta = ' + nResposta)
+        // console.log('selectedOption1: ' + selectedOption1)
+        // console.log('selectedOption2: ' + selectedOption2)
+        // console.log('nResposta = ' + nResposta)
         switch (nResposta) {
             case '1':
                 if (selectedOption1 == 1 && selectedOption2 == 1) {
@@ -206,7 +206,7 @@ scrollableDiv.addEventListener('mousedown', (e) => {
     e.preventDefault();
     isDragging = true;
     scrollableDiv.classList.add('grabbing');
-    initialX = e.clientX - scrollableDiv.scrollLeft;
+    initialX = e.clientX + scrollableDiv.scrollLeft;
 });
 
 document.addEventListener('mousemove', (e) => {
