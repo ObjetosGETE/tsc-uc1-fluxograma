@@ -31,9 +31,9 @@
         border: 2px solid #624C3C;
         display: flex;
         width: 98%;
-        min-height: 680px;
-        aspect-ratio: 16/9;
-        margin: 15px auto;
+        max-width: 1920px;
+        height: 700px;
+        margin: 15px;
         overflow: hidden;
         overflow-x: scroll;
         position: relative;
@@ -172,7 +172,7 @@
         .img-fluxo {
             height: 90px;
             margin-top: -30px;
-            margin-left: -81px;
+            margin-left: -80px;
         }
     }
 
